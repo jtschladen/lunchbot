@@ -2,7 +2,7 @@
   "name": "lunchbot",
   "version": "0.0.0",
   "private": true,
-  "author": "npm install hubot-slack --save",
+  "author": "orange-couch-club",
   "description": "A bot that asks about lunch",
   "dependencies": {
     "hubot": "^2.13.2",
@@ -14,6 +14,7 @@
     "hubot-maps": "0.0.2",
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.3",
+    "hubot-slack": "3.3.0",
     "hubot-rules": "^0.1.1",
     "hubot-scripts": "^2.16.1",
     "hubot-shipit": "^0.2.0"
