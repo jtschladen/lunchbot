@@ -12,6 +12,13 @@ module.exports = (robot) ->
 
  robot.hear /badger/i, (res) ->
    res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
+
+ floors = ['4th', '5th']
+
+ robot.hear /lunch/i, (res) ->
+   floor = res.random floors
+   res.send "You should eat on the #{floor} floor today"
+
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
