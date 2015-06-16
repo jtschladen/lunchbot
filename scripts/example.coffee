@@ -15,7 +15,7 @@ module.exports = (robot) ->
 
  floors = ['4th', '5th']
 
- robot.hear /lunch/i, (res) ->
+ robot.hear /which floor/i, (res) ->
    floor = res.random floors
    res.send "You should eat on the #{floor} floor today"
 
