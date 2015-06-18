@@ -19,11 +19,11 @@ module.exports = (robot) ->
    floor = res.random floors
    res.send "You should eat on the #{floor} floor today"
 
-  robot.respond /start lunch timer/, (res) ->
-   res.send "I'm going to start counting down to lunch!"
-   annoyIntervalId = setInterval () ->
-     res.send "Lunch plans?"
-   , 60000
+ # robot.respond /start lunch timer/, (res) ->
+ #  res.send "I'm going to start counting down to lunch!"
+ #  annoyIntervalId = setInterval () ->
+ #    res.send "Lunch plans?"
+ #  , 60000
 
   #
   # robot.respond /open the (.*) doors/i, (res) ->
