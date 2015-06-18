@@ -23,7 +23,7 @@ module.exports = (robot) ->
    res.send "I'm going to start counting down to lunch!"
    annoyIntervalId = setInterval () ->
      res.send "Lunch plans?"
-   , 1000
+   , 60000
 
   #
   # robot.respond /open the (.*) doors/i, (res) ->
