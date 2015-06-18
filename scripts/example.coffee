@@ -19,6 +19,8 @@ module.exports = (robot) ->
    floor = res.random floors
    res.send "You should eat on the #{floor} floor today"
 
+# hubot new job 0 * * * * "Good morning everyone!"
+
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
