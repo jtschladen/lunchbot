@@ -20,7 +20,7 @@ module.exports = (robot) ->
     res.send "I already answered this! Eat on the #{lastFloor} floor today."
   else
    lastFloor = res.random floors
-   res.send "You should eat on the #{lastFloor} floor today."
+   res.send "You should eat on the #{lastFloor} floor today, and I'll remember that."
 
  lastFloor = null
 
