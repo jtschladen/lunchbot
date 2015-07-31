@@ -22,7 +22,7 @@ module.exports = (robot) ->
  robot.hear /which floor/i, (res) ->
   now = new Date()
   res.send "Junk = #{now.getYear()} #{now.getMonth()} #{now.getDate()}"
-  nowDateMonth = now.getYear().concat(now.getMonth()).concat(now.getDate())
+  nowDateMonth = "#{now.getYear()} #{now.getMonth()} #{now.getDate()}"
   res.send "Current day = #{nowDateMonth}"
   if now and savedDate
     moreThanADayAgo = savedDate != savedDateMonth
