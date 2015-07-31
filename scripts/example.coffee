@@ -21,7 +21,7 @@ module.exports = (robot) ->
 
  savedDate = null
 
- askCount = 0
+ askCount = null
 
  robot.hear /which floor/i, (res) ->
   now = new Date()
