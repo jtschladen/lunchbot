@@ -29,7 +29,6 @@ module.exports = (robot) ->
   if now and savedDate
     moreThanADayAgo = savedDate != nowDateMonth
   if lastFloor and savedDate and !moreThanADayAgo
-    askCount += 1
     if askCount > 5
      response = res.random sarcasticResponses
      res.send "#{response}"
