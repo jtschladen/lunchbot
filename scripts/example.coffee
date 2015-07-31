@@ -24,6 +24,7 @@ module.exports = (robot) ->
  askCount = null
 
  robot.hear /which floor/i, (res) ->
+  user = msg.message.user.name
   now = new Date()
   nowDateMonth = "#{now.getFullYear()} #{now.getMonth()} #{now.getDate()}"
   if now and savedDate
@@ -34,7 +35,7 @@ module.exports = (robot) ->
      response = res.random sarcasticResponses
      res.send "#{response}"
     else
-     res.send "I already answered this! Eat on the #{lastFloor} floor today."
+     res.send "I already answered this, #{user}! Eat on the #{lastFloor} floor today."
   else
    lastFloor = res.random floors
    savedDate = nowDateMonth
