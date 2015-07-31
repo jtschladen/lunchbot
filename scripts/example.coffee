@@ -23,6 +23,7 @@ module.exports = (robot) ->
 
  robot.hear /which floor/i, (res) ->
   now = new Date()
+  res.send "Current hour = #{now.getHours()}"
   if now and savedDate
     moreThanADayAgo = Math.round((now.getTime() - savedDate.getTime()) / MINUTE) >= 1
   if lastFloor and savedDate and !moreThanADayAgo
