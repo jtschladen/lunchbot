@@ -24,7 +24,7 @@ module.exports = (robot) ->
  robot.hear /which floor/i, (res) ->
   now = new Date()
   if now and savedDate
-    moreThanADayAgo = Math.round((now.getTime() - savedDate.getTime()) / MINUTE) > 1
+    moreThanADayAgo = Math.round((now.getTime() - savedDate.getTime()) / MINUTE) >= 1
   if lastFloor and savedDate and !moreThanADayAgo
     res.send "I already answered this! Eat on the #{lastFloor} floor today."
   else
