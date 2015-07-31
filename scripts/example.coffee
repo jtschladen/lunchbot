@@ -15,14 +15,14 @@ module.exports = (robot) ->
 
  floors = ['4th', '5th']
 
+ lastFloor = null
+
  robot.hear /which floor/i, (res) ->
   if lastFloor
     res.send "I already answered this! Eat on the #{lastFloor} floor today."
   else
    lastFloor = res.random floors
    res.send "You should eat on the #{lastFloor} floor today."
-
- lastFloor = null
 
  # robot.respond /start lunch timer/, (res) ->
  #  res.send "I'm going to start counting down to lunch!"
