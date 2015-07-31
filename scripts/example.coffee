@@ -19,18 +19,17 @@ module.exports = (robot) ->
 
  savedDate = null
 
- MINUTE = 1000 * 60
-
  robot.hear /which floor/i, (res) ->
   now = new Date()
-  res.send "Current hour = #{now.getHours()}"
+  nowDateMonth = now.getYear() + now.getMonth() + now.getDate()
+  res.send "Current day = #{nowDateMonth}"
   if now and savedDate
-    moreThanADayAgo = Math.round((now.getTime() - savedDate.getTime()) / MINUTE) >= 1
+    moreThanADayAgo = savedDate != savedDateMonth
   if lastFloor and savedDate and !moreThanADayAgo
     res.send "I already answered this! Eat on the #{lastFloor} floor today."
   else
    lastFloor = res.random floors
-   savedDate = new Date()
+   savedDate = nowDateMonth
    res.send "You should eat on the #{lastFloor} floor today."
 
  # robot.respond /start lunch timer/, (res) ->
