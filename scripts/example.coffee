@@ -31,6 +31,10 @@ module.exports = (robot) ->
    savedDate = nowDateMonth
    res.send "You should eat on the #{lastFloor} floor today."
 
+ robot.hear /reset floor/i, (res) ->
+  lastFloor = null
+  res.send "Okay, I reset the floor for you."
+
  # robot.respond /start lunch timer/, (res) ->
  #  res.send "I'm going to start counting down to lunch!"
  #  annoyIntervalId = setInterval () ->
