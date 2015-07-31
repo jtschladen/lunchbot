@@ -19,16 +19,21 @@ module.exports = (robot) ->
 
  savedDate = null
 
+ askCount = 0
+
  robot.hear /which floor/i, (res) ->
   now = new Date()
   nowDateMonth = "#{now.getFullYear()} #{now.getMonth()} #{now.getDate()}"
   if now and savedDate
     moreThanADayAgo = savedDate != nowDateMonth
   if lastFloor and savedDate and !moreThanADayAgo
+    askCount += 1
+    res.send "ask count = #{askCount}"
     res.send "I already answered this! Eat on the #{lastFloor} floor today."
   else
    lastFloor = res.random floors
    savedDate = nowDateMonth
+   askCount = 1
    res.send "You should eat on the #{lastFloor} floor today."
 
  robot.hear /reset floor/i, (res) ->
