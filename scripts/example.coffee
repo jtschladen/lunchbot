@@ -22,7 +22,6 @@ module.exports = (robot) ->
  robot.hear /which floor/i, (res) ->
   now = new Date()
   nowDateMonth = "#{now.getFullYear()} #{now.getMonth()} #{now.getDate()}"
-  res.send "Current day = #{nowDateMonth}, saved = #{savedDate}"
   if now and savedDate
     moreThanADayAgo = savedDate != nowDateMonth
   if lastFloor and savedDate and !moreThanADayAgo
