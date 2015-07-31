@@ -24,7 +24,7 @@ module.exports = (robot) ->
  askCount = null
 
  robot.hear /which floor/i, (res) ->
-  user = msg.message.user.name
+  user = res.message.user.name
   now = new Date()
   nowDateMonth = "#{now.getFullYear()} #{now.getMonth()} #{now.getDate()}"
   if now and savedDate
