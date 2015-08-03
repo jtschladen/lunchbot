@@ -35,7 +35,7 @@ module.exports = (robot) ->
      response = res.random sarcasticResponses
      res.send "#{response}"
     else
-     res.send "I already answered this, #{user}! Eat on the #{lastFloor} floor today."
+     res.send "I already answered this, @#{user}! Eat on the #{lastFloor} floor today."
   else
    lastFloor = res.random floors
    savedDate = nowDateMonth
