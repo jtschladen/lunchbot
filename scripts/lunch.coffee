@@ -31,3 +31,4 @@ module.exports = (robot) ->
  robot.hear /reset floor/i, (res) ->
   lastFloor = null
   res.send "Okay, I reset the floor for you."
+  
