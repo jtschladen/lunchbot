@@ -22,9 +22,19 @@ module.exports = (robot) ->
     randimalMe msg, (url) ->
       msg.send url
 
+  robot.respond /puppy me/i, (msg) ->
+    rpuppyMe msg, (url) ->
+      msg.send url
 
 randimalMe = (msg, cb) ->
   msg.http("http://animalsbeingdicks.com/random")
+    .get() (err, res, body) ->
+      console.log res.headers.location
+      animalMe msg, res.headers.location, (location) ->
+        cb location 
+
+rpuppyMe = (msg, cb) ->
+  msg.http("http://openpuppy.com/")
     .get() (err, res, body) ->
       console.log res.headers.location
       animalMe msg, res.headers.location, (location) ->
