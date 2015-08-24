@@ -34,10 +34,11 @@ randimalMe = (msg, cb) ->
         cb location 
 
 rpuppyMe = (msg, cb) ->
-  msg.http("http://openpuppy.com/")
+  msg.http("http://openpuppies.com/")
     .get() (err, res, body) ->
       console.log res
       console.log res.headers
+      console.log res.headers.location
       animalMe msg, res.headers.location, (location) ->
         cb location 
 
