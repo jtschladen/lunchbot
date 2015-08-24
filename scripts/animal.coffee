@@ -18,7 +18,7 @@ Select     = require("soupselect").select
 HtmlParser = require "htmlparser"
 
 module.exports = (robot) ->
-  robot.respond /animal me/i, (msg) ->
+  robot.hear /animal me/i, (msg) ->
     res.send "I heard you!"
    # randimalMe msg, (url) ->
    #   msg.send url
