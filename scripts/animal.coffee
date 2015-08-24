@@ -19,7 +19,7 @@ HtmlParser = require "htmlparser"
 
 module.exports = (robot) ->
   robot.hear /animal me/i, (msg) ->
-    res.send "I heard you!"
+    msg.send "I heard you!"
    # randimalMe msg, (url) ->
    #   msg.send url
 
