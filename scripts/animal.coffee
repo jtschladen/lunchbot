@@ -23,8 +23,9 @@ module.exports = (robot) ->
       msg.send url
 
   robot.respond /puppy me/i, (msg) ->
-    rpuppyMe msg, (url) ->
-      msg.send url
+    msg.send "www.randomdoggiegenerator.com/randomdoggie.php"
+  #  rpuppyMe msg, (url) ->
+  #    msg.send url
 
 randimalMe = (msg, cb) ->
   msg.http("http://animalsbeingdicks.com/random")
