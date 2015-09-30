@@ -32,8 +32,8 @@ randFloorMe = (msg, cb) ->
 floorMe = (msg, location, cb) ->
   msg.http(location)
     .get() (err, res, body) ->
-      handler = new HtmlParser.DefaultHandler()
-      parser  = new HtmlParser.Parser handler
+#      handler = new HtmlParser.DefaultHandler()
+#      parser  = new HtmlParser.Parser handler
 
       body
 
