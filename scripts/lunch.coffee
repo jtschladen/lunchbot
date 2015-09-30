@@ -23,7 +23,7 @@ module.exports = (robot) ->
       msg.send url
 
 randFloor = (msg, cb) ->
-  msg.http("https://www.random.org/integers/?num=1&min=4&max=5&format=plain&rnd=new&col=1&base=10”)
+  msg.http("https://www.random.org/integers/?num=1&min=4&max=5&format=plain&rnd=new&col=1&base=10")
     .get() (err, res, body) ->
       console.log res.headers.location
       floorMe msg, res.headers.location, (location) ->
@@ -32,11 +32,4 @@ randFloor = (msg, cb) ->
 floorMe = (msg, location, cb) ->
   msg.http(location)
     .get() (err, res, body) ->
-      handler = new HtmlParser.DefaultHandler()
-      parser  = new HtmlParser.Parser handler
-
-      parser.parseComplete body
-      img = Select handler.dom, "#content .post .entry img"
-
-      console.log img
-      cb img[0].attribs.src
+      body
