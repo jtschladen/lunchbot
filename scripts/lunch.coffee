@@ -28,13 +28,9 @@ module.exports = (robot) ->
 
   askCount = null
 
-  robot.hear /testfloor/i, (msg) ->
-    console.log "I heard you"
-    randFloor msg, (url) ->
-      msg.send url
-
   robot.hear /which floor/i, (res) ->
     user = res.message.user.name
+    console.log "Received a floor request from #{user}"
     now = new Date()
     nowDateMonth = "#{now.getFullYear()} #{now.getMonth()} #{now.getDate()}"
     if now and savedDate
@@ -48,7 +44,7 @@ module.exports = (robot) ->
       else
         res.send "I already answered this, @#{user}! Eat on the #{lastFloor} floor today."
     else
-      lastFloor = res.random floors
+      lastFloor = randFloor msg, (url) -> msg.send url
       savedDate = nowDateMonth
       askCount = 1
       res.send "You should eat on the #{lastFloor} floor today."
