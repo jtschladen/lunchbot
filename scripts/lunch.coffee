@@ -26,7 +26,7 @@ module.exports = (robot) ->
 randFloor = (msg, cb) ->
   msg.http("https://www.random.org/integers/?num=1&min=4&max=5&format=plain&rnd=new&col=1&base=10")
     .get() (err, res, body) ->
-      console.log res
+      console.log body
       floorMe msg, res.headers.location, (location) ->
         cb location
 
