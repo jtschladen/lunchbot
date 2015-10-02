@@ -17,7 +17,6 @@
 Select     = require("soupselect").select
 HtmlParser = require "htmlparser"
 
-
 module.exports = (robot) ->
 
   floors = ['4th', '5th']
