@@ -19,6 +19,7 @@ HtmlParser = require "htmlparser"
 
 module.exports = (robot) ->
   robot.hear /testfloor/i, (msg) ->
+    console.log "I heard you"
     randFloor msg, (url) ->
       msg.send url
 
