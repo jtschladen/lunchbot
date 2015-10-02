@@ -27,10 +27,4 @@ randFloor = (msg, cb) ->
   msg.http("https://www.random.org/integers/?num=1&min=4&max=5&format=plain&rnd=new&col=1&base=10")
     .get() (err, res, body) ->
       console.log body
-      floorMe msg, res.headers.location, (location) ->
-        cb location
-
-floorMe = (msg, location, cb) ->
-  msg.http(location)
-    .get() (err, res, body) ->
-      body
+      cb body
