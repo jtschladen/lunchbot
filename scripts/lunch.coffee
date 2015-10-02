@@ -44,7 +44,8 @@ module.exports = (robot) ->
       else
         res.send "I already answered this, @#{user}! Eat on the #{lastFloor} floor today."
     else
-      lastFloor = randFloor res, (url) -> res.send url
+      lastFloor = res.random floors
+    #  lastFloor = randFloor res, (url) -> res.send url
       savedDate = nowDateMonth
       askCount = 1
       res.send "You should eat on the #{lastFloor} floor today."
