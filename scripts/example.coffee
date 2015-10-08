@@ -13,6 +13,10 @@ module.exports = (robot) ->
  robot.hear /badger/i, (res) ->
    res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
 
+ robot.hear /summon (.*)/i, (res) ->
+   person = res.match[1]
+   res.send "\invite #{person}"
+
  # robot.respond /start lunch timer/, (res) ->
  #  res.send "I'm going to start counting down to lunch!"
  #  annoyIntervalId = setInterval () ->
