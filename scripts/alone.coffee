@@ -25,12 +25,6 @@ module.exports = (robot) ->
          'http://media2.giphy.com/media/jRl2V1AwJiSL6/giphy.gif'
          'http://stream1.gifsoup.com/view3/3659378/all-by-myself-o.gif']
 
-  lastFloor = null
-
-  savedDate = null
-
-  askCount = null
-
   robot.hear /alone|solo|by myself|lonely/i, (res) ->
     user = res.message.user.name
     console.log "#{user} is alone"
