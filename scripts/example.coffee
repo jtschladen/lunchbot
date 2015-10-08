@@ -15,7 +15,7 @@ module.exports = (robot) ->
 
  robot.hear /summon (.*)/i, (res) ->
    person = res.match[1]
-   res.send "\invite #{person}"
+   res.send "/invite #{person}"
 
  # robot.respond /start lunch timer/, (res) ->
  #  res.send "I'm going to start counting down to lunch!"
