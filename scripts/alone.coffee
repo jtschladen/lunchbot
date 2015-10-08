@@ -31,7 +31,7 @@ module.exports = (robot) ->
 
   askCount = null
 
-  robot.hear /alone/i, (res) ->
+  robot.hear /alone|solo|by myself|lonely/i, (res) ->
     user = res.message.user.name
     console.log "#{user} is alone"
     response = res.random gif
