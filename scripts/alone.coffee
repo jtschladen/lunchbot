@@ -1,5 +1,5 @@
 # Description:
-#   All by myself... :(
+#   All by myself... :'(
 #
 # Dependencies:
 #   "htmlparser": "1.7.6"
@@ -36,4 +36,5 @@ module.exports = (robot) ->
     console.log "#{user} is alone"
     response = res.random gif
     res.send "#{response}"
+
 
