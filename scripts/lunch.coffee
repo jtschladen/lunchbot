@@ -53,6 +53,10 @@ module.exports = (robot) ->
     lastFloor = null
     res.send "Okay, I reset the floor for you."
 
+  robot.hear /new floor/i, (res) ->
+    floor = randFloor res
+    res.send "I already answered this, @#{user}! Eat on the #{lastFloor} floor today."
+
   randFloor = (msg, cb) ->
     msg.http("https://www.random.org/integers/?num=1&min=4&max=5&format=plain&rnd=new&col=1&base=10")
       .get() (err, res, body) ->
