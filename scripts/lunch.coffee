@@ -48,7 +48,7 @@ module.exports = (robot) ->
         lastFloor = floor
       savedDate = nowDateMonth
       askCount = 1
-      res.send "You should eat on the #{lastFloor}th floor today."
+      res.send "You should eat on the #{lastFloor} floor today."
 
   robot.hear /reset floor/i, (res) ->
     lastFloor = null
