@@ -19,7 +19,7 @@ HtmlParser = require "htmlparser"
 
 module.exports = (robot) ->
 
-  floors = ['4th', '5th']
+  #floors = ['4th', '5th']
 
   lastFloor = null
 
@@ -43,11 +43,12 @@ module.exports = (robot) ->
       else
         res.send "I already answered this, @#{user}! Eat on the #{lastFloor} floor today."
     else
-      lastFloor = res.random floors
-    #  lastFloor = randFloor res, (url) -> res.send url
+    #  lastFloor = res.random floors
+      randFloor res, (floor) -> 
+        lastFloor = floor
       savedDate = nowDateMonth
       askCount = 1
-      res.send "You should eat on the #{lastFloor} floor today."
+      res.send "You should eat on the #{lastFloor}th floor today."
 
   robot.hear /reset floor/i, (res) ->
     lastFloor = null
