@@ -45,7 +45,7 @@ module.exports = (robot) ->
     else
     #  lastFloor = res.random floors
       randFloor res, (floor) -> 
-        lastFloor = "${floor}th"
+        lastFloor = floor
       savedDate = nowDateMonth
       askCount = 1
       res.send "You should eat on the #{lastFloor} floor today."
@@ -62,4 +62,4 @@ module.exports = (robot) ->
     msg.http("https://www.random.org/integers/?num=1&min=4&max=5&format=plain&rnd=new&col=1&base=10")
       .get() (err, res, body) ->
         console.log body
-        cb body.split "\n", 1
+        cb "#{body.split "\n", 1}th"
