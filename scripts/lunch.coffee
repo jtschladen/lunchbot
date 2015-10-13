@@ -45,7 +45,7 @@ module.exports = (robot) ->
     else
     #  lastFloor = res.random floors
       randFloor res, (floor) -> 
-        lastFloor = floor
+        lastFloor = "${floor}th"
       savedDate = nowDateMonth
       askCount = 1
       res.send "You should eat on the #{lastFloor} floor today."
