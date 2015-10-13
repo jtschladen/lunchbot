@@ -44,11 +44,11 @@ module.exports = (robot) ->
         res.send "I already answered this, @#{user}! Eat on the #{lastFloor} floor today."
     else
     #  lastFloor = res.random floors
-      randFloor res, (floor) -> 
-        lastFloor = floor
       savedDate = nowDateMonth
       askCount = 1
-      res.send "You should eat on the #{lastFloor} floor today."
+      randFloor res, (floor) -> 
+        lastFloor = floor
+        res.send "You should eat on the #{floor} floor today."
 
   robot.hear /reset floor/i, (res) ->
     lastFloor = null
