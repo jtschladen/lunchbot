@@ -47,7 +47,7 @@ module.exports = (robot) ->
       savedDate = nowDateMonth
       askCount = 1
       #randFloor res, (floor) -> 
-      randFloor res, (floor) ->
+      randFloorDeterministic res, (floor) ->
         lastFloor = floor
         res.send "You should eat on the #{floor} floor today."
 
