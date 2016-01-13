@@ -46,7 +46,8 @@ module.exports = (robot) ->
     #  lastFloor = res.random floors
       savedDate = nowDateMonth
       askCount = 1
-      randFloor res, (floor) -> 
+      #randFloor res, (floor) -> 
+      randFloor res, (floor) ->
         lastFloor = floor
         res.send "You should eat on the #{floor} floor today."
 
@@ -63,3 +64,13 @@ module.exports = (robot) ->
       .get() (err, res, body) ->
         console.log body
         cb "#{body.split "\n", 1}th"
+
+  fifth = false
+
+  randFloorDeterministic = (msg, cb) ->
+    if fifth
+      fifth = false
+      cb "5th"
+    else
+      fifth = true
+      cb "4th"
