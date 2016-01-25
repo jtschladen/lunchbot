@@ -65,12 +65,8 @@ module.exports = (robot) ->
         console.log body
         cb "#{body.split "\n", 1}th"
 
-  fifth = false
-
   randFloorDeterministic = (msg, cb) ->
-    if fifth
-      fifth = false
+    if lastFloor = "4th"
       cb "5th"
     else
-      fifth = true
       cb "4th"
