@@ -56,7 +56,7 @@ module.exports = (robot) ->
     res.send "Okay, I reset the floor for you."
 
   robot.hear /new floor/i, (res) ->
-    randFloor res, (floor) ->
+    randFloorDeterministic res, (floor) ->
       res.send "#{floor}"
 
   randFloor = (msg, cb) ->
@@ -66,7 +66,7 @@ module.exports = (robot) ->
         cb "#{body.split "\n", 1}th"
 
   randFloorDeterministic = (msg, cb) ->
-    if lastFloor = "4th"
+    if lastFloor == "4th"
       cb "5th"
     else
       cb "4th"
