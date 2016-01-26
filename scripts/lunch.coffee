@@ -57,6 +57,7 @@ module.exports = (robot) ->
 
   robot.hear /new floor/i, (res) ->
     randFloorDeterministic res, (floor) ->
+      lastFloor = floor
       res.send "#{floor}"
 
   randFloor = (msg, cb) ->
