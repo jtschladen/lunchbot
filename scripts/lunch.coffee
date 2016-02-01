@@ -67,7 +67,7 @@ module.exports = (robot) ->
         cb "#{body.split "\n", 1}th"
 
   randFloorDeterministic = (msg, cb) ->
-    if lastFloor == "4th"
-      cb "5th"
-    else
+    if lastFloor == "5th"
       cb "4th"
+    else
+      cb "5th"
