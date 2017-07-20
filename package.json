@@ -24,6 +24,6 @@
     "hubot-giphy-gifme": "0.1.2"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "8.x.x"
   }
 }
